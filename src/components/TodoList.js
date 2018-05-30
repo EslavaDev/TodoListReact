@@ -7,10 +7,19 @@ import '../styles/TodoList.css';
 export default class TodoList extends Component {
     constructor(props){
         super(props)
-        this.state = {  }
+        this.state = { 
+            items: this.props.items
+         }
+
+    }
+
+    componentWillReceiveProps(nextProps){
+        if(nextProps.lentgth != this.state.items.length){
+            this.setState({ items: nextProps.items })
+        }
     }
     render() {
-        let items = this.props.items.map( (currentValue, index)=>{
+        let items = this.state.items.map( (currentValue, index)=>{
             return(
                 <TodoListItem name={currentValue} key={index}/>
             )

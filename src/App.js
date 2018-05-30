@@ -21,6 +21,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <h1 className="App-title">Mi primer Todo List</h1>
         <TodoBox ref="todobox" onSubmit={this.onSubmit} />
         <TodoList ref="todolist" items= { this.state.todoItems }/>
       </div>
